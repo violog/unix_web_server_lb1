@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Portal | Admins</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="container">
+        <nav class="header__navigation">
+            <ul class='buttons'>
+                <li><a href="/logout">Logout</a></li>
+                <li><a href="/{{.UserID}}/items/create">Create</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <h1 class='title'>Todo App</h1>
+        {{range .Items}}
+        <div class="todos">
+            <div class='todo'>
+                <p class="todo__title">
+                    Name: {{.Name}}
+                </p>
+                <p class="todo__description">
+                    Description: {{.Description}}
+                </p>
+                <p class="todo__status">
+                    Status: {{.Status}}
+                </p>
+                <div class="todo__buttons">
+                    <a class="todo__button" href="/{{.UserID}}/items/update/{{.ID}}">Update</a>
+                    <a class="todo__button" href="/{{.UserID}}/items/update-status/{{.ID}}">Update status</a>
+                    <a class="todo__button" href="/{{.UserID}}/items/delete/{{.ID}}">Delete</a>
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</main>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .header {
+        padding: 10px;
+        background: #AA90CC;
+    }
+
+    .header__navigation ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .header__navigation ul li {
+        padding: 10px;
+    }
+
+    .header__navigation ul li a {
+        color: rgb(56, 56, 56);
+    }
+
+    .title {
+        margin: 10px 0;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .todos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .todo {
+        width: 40%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 0px 1px 8px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .todo__title {
+        font-size: 20px;
+        margin: 10px auto;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .todo__description {
+        font-size: 15px;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .todo__status {
+        font-size: 15px;
+        text-align: center;
+        margin: 10px auto;
+        font-weight: 600;
+    }
+
+    .todo__buttons {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .todo__button {
+        display: block;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid transparent;
+        border-radius: 10px;
+        font-weight: 600;
+        background: #AA90CC;
+        color: rgb(56, 56, 56);
+    }
+
+    .todo__button:hover {
+        border: 3px solid #AA90CC;
+        background: transparent;
+    }
+</style>
+</body>
+
+</html>

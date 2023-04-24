@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Portal | Create Admin</title>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <nav class="header__navigation">
+            <ul class='buttons'>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="wrapper">
+    <form action="/{{.UserID}}/items/update/{{.ItemID}}" method="post" class = "create-admin-form">
+        <label for='item-name'>Name:</label>
+        <input type="text" name="name" id='item-name'>
+        <label for='item-description'>Description:</label>
+        <input type="text" name="description" id='item-description'>
+        <input type="submit" value="Update">
+    </form>
+</div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .header {
+        padding: 10px;
+        background: #AA90CC;
+    }
+
+    .header__navigation ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .header__navigation ul li {
+        padding: 10px;
+    }
+
+    .header__navigation ul li a {
+        color: rgb(56, 56, 56);
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .create-admin-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        border-radius: 10px;
+        background: #AA90CC;
+    }
+
+    .create-admin-form label {
+        margin: 10px;
+        font-weight: 700;
+    }
+
+    .create-admin-form input {
+        padding: 7px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+
+    .create-admin-form input[type='submit'] {
+        padding: 10px 15px;
+        margin: 10px auto;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        background: rgb(45, 60, 77);
+        color: white;
+        border: none;
+    }
+
+    .create-admin-form input[type='submit']:hover {
+        background: rgb(45, 60, 77);
+        background: linear-gradient(204deg, rgba(45, 60, 77, 1) 0%, rgba(81, 105, 131, 1) 100%);
+    }
+</style>
+</body>
+</html>

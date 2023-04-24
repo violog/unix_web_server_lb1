@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    volumes:
+      - /Users/admin/Учёба/AUnix/lb1/server_data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=todo
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+

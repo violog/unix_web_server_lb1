@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <form action="/login" method="post" class='form-registration'>
+        <label for='username-login'>Login:</label>
+        <input type="text" name="email" id='username-login'>
+        <label for='password-login'>Password:</label>
+        <input type="password" name="password" id='password-login'>
+        <input type="submit" value="Login">
+    </form>
+</div>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .form-registration {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        border-radius: 10px;
+        background: #AA90CC;
+    }
+
+    .form-registration label {
+        margin: 10px;
+        font-weight: 700;
+    }
+
+    .form-registration input {
+        padding: 7px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+
+    .form-registration input[type='submit'] {
+        padding: 10px 15px;
+        margin: 10px auto;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 600;
+        background: rgb(45, 60, 77);
+        color: white;
+        border: none;
+    }
+
+    .form-registration input[type='submit']:hover {
+        background: rgb(45, 60, 77);
+        background: linear-gradient(204deg, rgba(45, 60, 77, 1) 0%, rgba(81, 105, 131, 1) 100%);
+    }
+</style>
+</body>
+</html>
