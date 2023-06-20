@@ -1,12 +1,19 @@
 version: "3"
 
 services:
+  server:
+    image: todo_lb2
+    depends_on:
+      - db
+    restart: unless-stopped
+    ports:
+      - "8080:8087"
   db:
     image: postgres:latest
     ports:
       - "5433:5432"
     volumes:
-      - /Users/admin/Учёба/AUnix/lb1/server_data/db:/var/lib/postgresql/data
+      - /Users/admin/NURE/AUnix/lb1/server_data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=todo
       - POSTGRES_USER=postgres

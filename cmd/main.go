@@ -13,7 +13,7 @@ import (
 func main() {
 	log := zap.NewExample()
 	ctx := context.Background()
-	db, err := database.New("postgres://postgres:123456@localhost:5433/todo?sslmode=disable")
+	db, err := database.New("postgres://postgres:123456@db:5432/todo?sslmode=disable")
 	if err != nil {
 		log.Error("could not create database" + err.Error())
 		os.Exit(1)
